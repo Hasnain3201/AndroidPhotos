@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/add_tag_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#136FDF"
+            android:elevation="4dp"
+            android:minHeight="56dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <TextView
+            android:id="@+id/toolbarAddTagText"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/add_tag"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:translationY="-63dp"
+            android:translationX="105dp"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout12"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout11"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+
+        <EditText
+            android:id="@+id/add_person_tag"
+            android:layout_width="362dp"
+            android:layout_height="48dp"
+            android:autofillHints="Person"
+            android:ems="10"
+            android:hint="@string/add_person_tag"
+            android:inputType="text"
+            android:text="@string/add_person_tag" />
+
+        <Button
+            android:id="@+id/add_person_tag_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_tag_buttons" />
+
+        <EditText
+            android:id="@+id/add_location_tag"
+            android:layout_width="362dp"
+            android:layout_height="48dp"
+            android:autofillHints="Location"
+            android:ems="10"
+            android:hint="@string/add_location_tag"
+            android:inputType="text"
+            android:text="@string/add_location_tag" />
+
+        <Button
+            android:id="@+id/add_location_tag_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_tag_buttons" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

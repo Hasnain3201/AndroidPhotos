@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Android Photos03</string>
+    <string name="home_description">Albums</string>
+    <string name="create_album_button">Create an album</string>
+    <string name="delete_album_button">Delete an album</string>
+    <string name="search_photos_button">Search for an album by tag-value pair</string>
+    <string name="add_photo_button">Add a photo to this album</string>
+    <string name="delete_photo_button">Delete a photo from this album</string>
+    <string name="photo">This is a photo</string>
+    <string name="previous_photo_button">View the previous photo in the current album in slide show view</string>
+    <string name="next_photo_button">View the next photo in the current album in slide show view</string>
+    <string name="album_name">Album Name</string>
+    <string name="photo_list_item">Photo</string>
+    <string name="thumbnail">Thumbnail image in photo_list_view</string>
+
+    <string name="rename_button_text">Rename</string>
+    <string name="add_tag_button_text">Add tag</string>
+    <string name="delete">Delete</string>
+    <string name="add_tag">Add Tag</string>
+    <string name="add_person_tag" />
+    <string name="add_tag_buttons" />
+    <string name="add_location_tag" />
+    <string name="search_screen" />
+    <string name="search_person_hint" />
+    <string name="search_location_hint" />
+    <string name="search_or" />
+    <string name="search_and" />
+    <string name="search_button" />
+    <string name="open" />
+    <string name="open_album">Open Album</string>
+</resources>

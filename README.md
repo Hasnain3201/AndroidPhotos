@@ -1,64 +1,120 @@
-# Android Photos Application
+# Android Photos
+
+<p align="center">
+  <strong>An Android photo album manager built with Java, AndroidX, Material Components, and persistent local storage.</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/Language-Java-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/Build-Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white" alt="Gradle">
+  <img src="https://img.shields.io/badge/API-34-1f6feb?style=for-the-badge" alt="Android API 34">
+</p>
+
+## Preview
+
+Screenshots have not been added yet because this workspace does not have an Android SDK or emulator configured. Once the app is launched in Android Studio, capture the album list and album detail screens and place them in `screenshots/` using names such as `screenshots/albums.png` and `screenshots/album-detail.png`.
 
 ## Overview
 
-- This project is an Android application that allows the storage and management of photos in one or more albums.
-- The application is a port of a JavaFX-based Photos project to Android, built using Android Studio with Java.
-- The app provides a user-friendly interface for organizing and viewing photos on a smartphone.
+Android Photos is a mobile photo organization app inspired by a desktop JavaFX photo manager. It lets users create albums, rename or delete albums, import photos from the device gallery, and view photo thumbnails inside each album. Album data is saved locally so the library persists across app launches.
 
-## Features
+The repository now contains the Android Studio project directly at the root, so it can be opened and built without unpacking an archive.
 
-- **Home Screen**: Displays a list of albums and persists album data across multiple app launches.
-- **Album Management**: Allows users to open, create, delete, and rename albums.
-- **Photo Management**: Users can add, remove, and display photos within albums. Includes a slideshow feature for viewing photos.
+## Key Features
+
+- Create, rename, open, and delete photo albums.
+- Import photos from the Android media gallery.
+- Display album contents in a RecyclerView with image thumbnails.
+- Persist album data with SharedPreferences and Gson serialization.
+- Use Parcelable model objects for Android screen navigation.
+- Material floating action buttons for common album and photo actions.
+
+## Tech Stack
+
+| Area | Technology |
+| --- | --- |
+| Language | Java |
+| Platform | Android |
+| UI | Android XML layouts, RecyclerView, Material Components |
+| Storage | SharedPreferences, Gson |
+| Build | Gradle wrapper, Android Gradle Plugin |
+
+## Project Structure
+
+```text
+.
+├── app/
+│   ├── build.gradle.kts
+│   └── src/main/
+│       ├── AndroidManifest.xml
+│       ├── java/com/example/androidphotos03/
+│       └── res/
+├── gradle/
+├── build.gradle.kts
+├── settings.gradle.kts
+└── gradlew
+```
 
 ## Getting Started
 
 ### Prerequisites
 
-- Android Studio installed on your system.
-- Nexus 4 (4.7 inch, 768x1280, xhdpi) device emulator set up in Android Studio.
+- Android Studio
+- JDK 17 or newer
+- Android SDK Platform 34
+- Android emulator or physical device running API 34+
 
 ### Installation
 
-- Clone the repository:
-  ```sh
-  git clone https://github.com/your-username/android-photos-app.git
-  cd android-photos-app
+```bash
+git clone https://github.com/Hasnain3201/AndroidPhotos.git
+cd AndroidPhotos
+```
 
-- Open the project in Android Studio.
+Open the folder in Android Studio. Android Studio should create a local `local.properties` file pointing to your SDK installation. Do not commit that file.
 
-- Ensure the project configuration matches the following:
-  - **compileSdkVersion**: 34
-  - **minSdkVersion**: 34
-  - **targetSdkVersion**: 34
+### Run
 
-- Build and run the app on the Nexus 4 emulator.
+From Android Studio:
 
-## Application Usage
+1. Sync the Gradle project.
+2. Select an API 34+ emulator or device.
+3. Run the `app` configuration.
 
-- **Home Screen**: On launching the app, the home screen displays a list of albums.
+From the command line:
 
-- **Album Management**:
-  - **Open Album**: Tap on an album to view its contents.
-  - **Create Album**: Use the create button to add a new album.
-  - **Delete Album**: Long press on an album to delete it.
-  - **Rename Album**: Long press on an album and select rename.
+```bash
+./gradlew :app:assembleDebug
+```
 
-- **Photo Management**:
-  - **Add Photo**: Open an album and use the add button to import a photo from the device.
-  - **Remove Photo**: Long press on a photo to remove it from the album.
-  - **Display Photo**: Tap on a photo to view it in full screen.
-  - **Slideshow**: Use the slideshow feature to navigate through photos in an album.
+The generated debug APK will be created under `app/build/outputs/apk/debug/` when the Android SDK is configured.
 
-## Development Details
+## Demo Flow
 
-- **Packages**: The project is organized into packages for the model, view, and controller.
-- **Main Class**: `MainActivity` with the main method to launch the application.
-- **Data Storage**: Uses Android's storage mechanisms to persist album and photo data.
-- **UI Design**: The GUI is designed using Android XML layouts.
+1. Launch the app to view the album list.
+2. Tap the add button to create a new album.
+3. Open an album and upload a photo from the device gallery.
+4. Remove photos or manage albums using the action buttons.
+5. Close and reopen the app to confirm album data persists.
 
-## Authors
+## Troubleshooting
 
-- Hasnain Shahzad
-- Peter Sestito
+| Issue | Fix |
+| --- | --- |
+| `SDK location not found` | Open the project in Android Studio or create `local.properties` with `sdk.dir=/path/to/android/sdk`. |
+| Build cannot find Android SDK 34 | Install Android SDK Platform 34 through Android Studio's SDK Manager. |
+| Photo picker permission prompt appears | Grant image/media access when Android asks for permission. |
+
+## Future Improvements
+
+- Add polished screenshots after running on an emulator.
+- Complete the tag/search screens already represented in the project layouts.
+- Add instrumentation tests for album creation and photo import flows.
+
+## Author
+
+**Hasnain Shahzad**
+
+- GitHub: [Hasnain3201](https://github.com/Hasnain3201)
+- LinkedIn: [hasnain-shahzad-cs3201](https://www.linkedin.com/in/hasnain-shahzad-cs3201/)
