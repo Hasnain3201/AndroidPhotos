@@ -1,42 +1,48 @@
 # Android Photos
 
 <p align="center">
-  <strong>An Android photo album manager built with Java, AndroidX, Material Components, and persistent local storage.</strong>
+  <strong>A native Android photo-album manager for creating albums, importing images, and keeping a lightweight local photo library.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android">
-  <img src="https://img.shields.io/badge/Language-Java-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/Android-API%2034-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android API 34">
+  <img src="https://img.shields.io/badge/Java-AndroidX-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java AndroidX">
+  <img src="https://img.shields.io/badge/UI-Material%20Components-6750A4?style=for-the-badge" alt="Material Components">
   <img src="https://img.shields.io/badge/Build-Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white" alt="Gradle">
-  <img src="https://img.shields.io/badge/API-34-1f6feb?style=for-the-badge" alt="Android API 34">
 </p>
 
 ## Preview
 
-Screenshots have not been added yet because this workspace does not have an Android SDK or emulator configured. Once the app is launched in Android Studio, capture the album list and album detail screens and place them in `screenshots/` using names such as `screenshots/albums.png` and `screenshots/album-detail.png`.
+Runtime screenshots will be added after an Android SDK and emulator/device are available. This workspace does not include an Android SDK, so the app cannot be rendered or screen-captured here without fabricating images.
+
+Planned capture set:
+
+| Screen | What it shows |
+| --- | --- |
+| Album Library | Saved albums, create action, and album management controls |
+| Album Detail | Imported photo thumbnails and photo-level actions |
+| Photo Import | Android gallery picker flow on a real emulator/device |
 
 ## Overview
 
-Android Photos is a mobile photo organization app inspired by a desktop JavaFX photo manager. It lets users create albums, rename or delete albums, import photos from the device gallery, and view photo thumbnails inside each album. Album data is saved locally so the library persists across app launches.
+Android Photos is the Android version of a course photo-management project. It preserves the project’s original album-focused workflow while moving the app into a clean Android Studio layout at the repository root. Users can create and manage albums, import photos from device storage, and persist album data locally between launches.
 
-The repository now contains the Android Studio project directly at the root, so it can be opened and built without unpacking an archive.
+## Highlights
 
-## Key Features
-
-- Create, rename, open, and delete photo albums.
-- Import photos from the Android media gallery.
-- Display album contents in a RecyclerView with image thumbnails.
-- Persist album data with SharedPreferences and Gson serialization.
-- Use Parcelable model objects for Android screen navigation.
-- Material floating action buttons for common album and photo actions.
+- Album creation, renaming, opening, and deletion.
+- Photo import from the Android media gallery.
+- RecyclerView-based album and photo lists.
+- Local persistence with `SharedPreferences` and Gson.
+- Parcelable model objects for passing album/photo data between screens.
+- Material floating action buttons for primary actions.
 
 ## Tech Stack
 
-| Area | Technology |
+| Layer | Tools |
 | --- | --- |
+| Platform | Android API 34 |
 | Language | Java |
-| Platform | Android |
-| UI | Android XML layouts, RecyclerView, Material Components |
+| UI | XML layouts, RecyclerView, Material Components |
 | Storage | SharedPreferences, Gson |
 | Build | Gradle wrapper, Android Gradle Plugin |
 
@@ -61,56 +67,41 @@ The repository now contains the Android Studio project directly at the root, so 
 ### Prerequisites
 
 - Android Studio
-- JDK 17 or newer
+- JDK 17+
 - Android SDK Platform 34
 - Android emulator or physical device running API 34+
 
-### Installation
+### Run
 
 ```bash
 git clone https://github.com/Hasnain3201/AndroidPhotos.git
 cd AndroidPhotos
-```
-
-Open the folder in Android Studio. Android Studio should create a local `local.properties` file pointing to your SDK installation. Do not commit that file.
-
-### Run
-
-From Android Studio:
-
-1. Sync the Gradle project.
-2. Select an API 34+ emulator or device.
-3. Run the `app` configuration.
-
-From the command line:
-
-```bash
 ./gradlew :app:assembleDebug
 ```
 
-The generated debug APK will be created under `app/build/outputs/apk/debug/` when the Android SDK is configured.
+For the full app experience, open the project in Android Studio, sync Gradle, select an emulator/device, and run the `app` configuration.
 
 ## Demo Flow
 
-1. Launch the app to view the album list.
-2. Tap the add button to create a new album.
-3. Open an album and upload a photo from the device gallery.
-4. Remove photos or manage albums using the action buttons.
-5. Close and reopen the app to confirm album data persists.
+1. Launch the app to the album library.
+2. Create a new album.
+3. Open the album and import a photo from the gallery.
+4. Remove photos or manage albums from the action controls.
+5. Restart the app and confirm saved album data is restored.
 
 ## Troubleshooting
 
 | Issue | Fix |
 | --- | --- |
 | `SDK location not found` | Open the project in Android Studio or create `local.properties` with `sdk.dir=/path/to/android/sdk`. |
-| Build cannot find Android SDK 34 | Install Android SDK Platform 34 through Android Studio's SDK Manager. |
-| Photo picker permission prompt appears | Grant image/media access when Android asks for permission. |
+| SDK 34 missing | Install Android SDK Platform 34 from Android Studio's SDK Manager. |
+| Media permission denied | Grant image/media access when Android prompts. |
 
-## Future Improvements
+## Roadmap
 
-- Add polished screenshots after running on an emulator.
-- Complete the tag/search screens already represented in the project layouts.
-- Add instrumentation tests for album creation and photo import flows.
+- Capture emulator screenshots once Android runtime setup is available.
+- Complete the tag/search screens represented by the current layouts.
+- Add focused instrumentation tests for album creation and photo import.
 
 ## Author
 
